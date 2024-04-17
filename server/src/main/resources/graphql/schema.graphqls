@@ -1,33 +1,18 @@
-type Query{
-    getAllStudents: [Student]
-    getStudentByFirstName(firstName: String): Student
-    getStudentByLastName(lastName: String): Student
-}
+#type Query{
+#
+#}
 
 type Mutation{
-    addStudent(student: StudentInput): Boolean
-    removeStudent(student: StudentInput): Boolean
-    removeStudentByFirstName(firstName: String): Boolean
+    addUser(userLoginInfo: UserLogin): Boolean
 }
 
 type Degree{
     degree: String
 }
 
-type Student{
-    firstName: String
-    lastName: String
-    age: Int
-    currentClass: Int
-    classNumber: Int
-    degree: Degree
-}
-
-input StudentInput{
-    firstName: String!
-    lastName: String!
-    age: Int!
-    currentClass: Int!
-    classNumber: Int!
-    degree: String!
+input UserLogin{
+    name: String
+    email: String
+    phoneNumber: Int
+    password: String
 }
