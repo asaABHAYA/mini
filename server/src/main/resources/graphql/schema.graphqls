@@ -1,0 +1,33 @@
+type Query{
+    getAllStudents: [Student]
+    getStudentByFirstName(firstName: String): Student
+    getStudentByLastName(lastName: String): Student
+}
+
+type Mutation{
+    addStudent(student: StudentInput): Boolean
+    removeStudent(student: StudentInput): Boolean
+    removeStudentByFirstName(firstName: String): Boolean
+}
+
+type Degree{
+    degree: String
+}
+
+type Student{
+    firstName: String
+    lastName: String
+    age: Int
+    currentClass: Int
+    classNumber: Int
+    degree: Degree
+}
+
+input StudentInput{
+    firstName: String!
+    lastName: String!
+    age: Int!
+    currentClass: Int!
+    classNumber: Int!
+    degree: String!
+}
