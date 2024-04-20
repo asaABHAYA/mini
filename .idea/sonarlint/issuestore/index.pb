@@ -8,8 +8,6 @@ f
 m
 =server/src/main/java/com/exam/server/entity/LocationInfo.java,f\b\fb8c242b50e1440e13ccf44ebc458d7c11da4733
 x
-Hserver/src/main/java/com/exam/server/repository/StudentDBRepository.java,0\e\0e6f9bc4f22a6d3b7bf3a686afba21f0201d0a66
-x
 Hserver/src/main/java/com/exam/server/repository/UserLoginRepository.java,f\4\f4fb334518923b1bb5b9cab01e26aa55c32d6110
 r
 Bserver/src/main/java/com/exam/server/service/UserLoginService.java,7\5\75a5ccf260f0b7d4baedbfb54ccf7354176fbe08
@@ -47,3 +45,15 @@ T
 $server/src/frontend/src/lib/store.ts,1\8\183938e50eaf9e8c6313c896c17a697ce2eec068
 T
 $server/src/frontend/src/lib/hooks.ts,3\c\3cefcd5c56dcc68d324f4d3b981c495d6d389951
+n
+>server/src/main/java/com/exam/server/model/UserLoginModel.java,e\d\edd4fbac79efba73b15d9cff9a3be9a2d422cef7
+e
+5server/src/main/java/com/exam/server/entity/Role.java,a\7\a7004ebb41521394448d3f0e4b53e222a3a7943e
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+s
+Cserver/src/main/java/com/exam/server/controller/AuthController.java,b\e\be69f4074bd9259f27e3f060c623673316bd3127
+k
+;server/src/main/java/com/exam/server/service/JwtHelper.java,1\4\14a33e61e5646b170fe977a67c20a3feeba39e87
+G
+server/build.gradle.kts,1\7\17fd1d60fc99c8b8340acb73dab09d68195497ae

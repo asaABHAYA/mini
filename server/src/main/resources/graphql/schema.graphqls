@@ -1,18 +1,22 @@
-#type Query{
-#
-#}
+type Query{
+    getUserLoginInfo(userName: String): UserLoginInfo
+}
 
 type Mutation{
-    addUser(userLoginInfo: UserLogin): Boolean
+    addUser(userLoginInfo: UserLoginInfoIp): Boolean
 }
 
-type Degree{
-    degree: String
-}
 
-input UserLogin{
+input UserLoginInfoIp{
     name: String
     email: String
-    phoneNumber: Int
+    phoneNo: Int
     password: String
+}
+
+type UserLoginInfo{
+    name: String!
+    email: String!
+    phoneNo: Int!
+    password: String!
 }

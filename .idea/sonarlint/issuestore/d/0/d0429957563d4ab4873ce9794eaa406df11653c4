@@ -1,0 +1,9 @@
+
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8É¾áÔï1J$0a7af698-d15b-4038-9c27-ce47af768820
+¥
+java:S3305"]Inject this field value directly into "authenticationProvider", the only method that uses it.(Ä‹¹«úÿÿÿÿ8Ê¾áÔï1J$19ca5310-af86-45bd-a06c-a69a88ca3b60
+¾
+java:S1128"vRemove this unused import 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration'.(Æ­¹¬øÿÿÿÿ8Ï¾áÔï1J$6c0c79c9-ce87-4eb3-92b1-172c5f887207
+ž
+java:S1128"]Remove this unused import 'org.springframework.security.crypto.argon2.Argon2PasswordEncoder'.(¹Át8Ï¾áÔï1J$738107ba-4b28-4240-a836-f430df2052df
