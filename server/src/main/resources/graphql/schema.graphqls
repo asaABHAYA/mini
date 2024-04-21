@@ -8,14 +8,16 @@ type Mutation{
 
 
 input UserLoginInfoIp{
-    name: String
+    firstName: String
+    lastName: String
     email: String
     phoneNo: Int
     password: String
 }
 
 type UserLoginInfo{
-    name: String!
+    firstName: String!
+    lastName: String!
     email: String!
     phoneNo: Int!
     password: String!

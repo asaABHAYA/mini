@@ -21,7 +21,7 @@ public class LoginController {
 
     @QueryMapping
     public UserLoginInfo getUserLoginInfo(@Argument String userName) {
-        return userLoginService.findByUsername(userName);
+        return userLoginService.findByFirstName(userName);
     }
   @MutationMapping
   public Boolean addUser(@Argument UserLoginGQL userLoginInfo) {

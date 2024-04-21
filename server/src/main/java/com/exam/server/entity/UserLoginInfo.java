@@ -7,7 +7,6 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.util.Collection;
 import java.util.List;
@@ -24,15 +23,17 @@ public class UserLoginInfo implements UserDetails {
     @GeneratedValue
     private Long id;
 
-    private String name;
+    private String firstName;
+    private String lastName;
     private String email;
     private Integer phoneNo;
 
     private String password;
 
-    public UserLoginInfo(String name, String email,
+    public UserLoginInfo(String firstName, String lastName, String email,
                          Integer integer, String password) {
-        this.name = name;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.phoneNo = integer;
         this.password = password;
@@ -53,7 +54,8 @@ public class UserLoginInfo implements UserDetails {
 
     @Override
     public String getUsername() {
-        return name;
+        log.info(email);
+        return email;
     }
 
     @Override

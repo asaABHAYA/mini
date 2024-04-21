@@ -21,8 +21,8 @@ public class UserLoginService implements UserDetailsService {
     private final UserLoginRepository userLoginRepository;
 
 
-    public UserLoginInfo findByUsername(@NonNull String username) {
-        return userLoginRepository.findByName(username);
+    public UserLoginInfo findByFirstName(@NonNull String username) {
+        return userLoginRepository.findByFirstName(username);
     }
 
     public UserLoginService(UserLoginRepository userLoginRepository) {
@@ -31,8 +31,9 @@ public class UserLoginService implements UserDetailsService {
 
     public UserLoginInfo toUserLoginInfo(@NonNull UserLoginGQL userLoginGQL) {
         return new UserLoginInfo(
-                userLoginGQL.name(), userLoginGQL.email(),
-                userLoginGQL.phoneNo(), userLoginGQL.password()
+                userLoginGQL.firstName(), userLoginGQL.lastName(),
+                userLoginGQL.email(), userLoginGQL.phoneNo(),
+                userLoginGQL.password()
         );
     }
 
@@ -47,7 +48,7 @@ public class UserLoginService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        UserLoginInfo user = userLoginRepository.findByName(username);
+        UserLoginInfo user = userLoginRepository.findByFirstName(username);
         if (user == null) {
             throw new UsernameNotFoundException(username);
         }

@@ -51,9 +51,13 @@ e
 5server/src/main/java/com/exam/server/entity/Role.java,a\7\a7004ebb41521394448d3f0e4b53e222a3a7943e
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-s
-Cserver/src/main/java/com/exam/server/controller/AuthController.java,b\e\be69f4074bd9259f27e3f060c623673316bd3127
-k
-;server/src/main/java/com/exam/server/service/JwtHelper.java,1\4\14a33e61e5646b170fe977a67c20a3feeba39e87
 G
 server/build.gradle.kts,1\7\17fd1d60fc99c8b8340acb73dab09d68195497ae
+a
+1server/src/frontend/src/components/login-form.tsx,1\3\131090d008074caae68a578703f5212812d75eca
+Z
+*server/src/frontend/src/app/logon/page.tsx,5\d\5d70c404cc8ceb51b5f8eac6b827e0c9fef6d5f3
+U
+%server/src/frontend/src/middleware.ts,0\1\01f47eb934a52efc03c5c5c3a7ef6988d8f49a3e
+]
+-server/src/frontend/src/app/api/auth/login.ts,9\b\9b11e679f3be84be21e633a0ba5853b0ebf02143

@@ -9,11 +9,9 @@ import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.argon2.Argon2PasswordEncoder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -35,10 +33,17 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     http.csrf(AbstractHttpConfigurer::disable)
+            .formLogin(form -> form
+                    .loginPage("/login.html")
+                    .permitAll())
+            .logout(logout -> logout.logoutUrl("/logout").permitAll())
         .authorizeHttpRequests(
             requests ->
                 requests
-                    .requestMatchers("/", "/login", "/signup", "/_next/**")
+                    .requestMatchers("/about.html", "/contact.html",
+                            "/graphql", "/dash.html", "/test.html",
+                            "/photos/**", "/contact",
+                            "/js/**", "/css/**")
                     .permitAll()
                     .requestMatchers("/user")
                     .hasAnyAuthority("USER")
@@ -46,9 +51,10 @@ public class SecurityConfig {
                     .hasAnyAuthority("ADMIN")
                     .anyRequest()
                     .authenticated())
+
         .sessionManagement(
             session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-            .httpBasic(Customizer.withDefaults());
+        .httpBasic(Customizer.withDefaults());
         return http.build();
     }
 }
