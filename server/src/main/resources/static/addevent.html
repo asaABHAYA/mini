@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Management|TvM Evento</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/84f63f6754.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -15,9 +15,7 @@
       <img src="/photos/logo black.png" class="elogo">
         <div class="formcont">
           <h2>ADD EVENT</h2>
-          <div class="message-alert message-alert-error">
-            <p>This is an error message</p>
-          </div>
+        
           <form action="" class="f"enctype="multipart/form-data">
             <input type="text" class="ip" placeholder="Title">
             <select class="s">
@@ -32,6 +30,9 @@
               <label for="thumb">Add Photos</label>
               <input type="file" class="ip" id="thumb" checked>
             </div>
+            <input type="date" class="ip" placeholder="Date">
+            <input type="text" class="ip" placeholder="Location">
+            <input type="text" class="ip" placeholder="Foodspot">
             <textarea rows="10" class="ta" placeholder="Body"></textarea>
             <button type="submit" class="dbtn">Add Post</button>
           </form>

@@ -1,0 +1,11 @@
+
+–
+java:S1128"NRemove this unused import 'com.exam.server.repository.LocationInfoRepository'.(ÈÎççýÿÿÿÿ8‡ï”ßð1J$5dcf1fd3-5a03-4dd9-b26e-c626391f1d07
+x
+java:S1128"0Remove this unused import 'jakarta.persistence'.(Î«Ô§úÿÿÿÿ8‡ï”ßð1J$987086db-fc9d-463c-9885-1b6b226caf4b
+m
+java:S1128"*Remove this unused import 'lombok.Getter'.(ùÒµÙ8ˆï”ßð1J$b54338c9-c7ad-45dd-973a-4b13257752a5
+s
+java:S1128"+Remove this unused import 'lombok.NonNull'.(¦¸©—ýÿÿÿÿ8ˆï”ßð1J$2bcd8b9e-99ff-4b59-b0a9-e4b26e12c2ef
+m
+java:S1128	"*Remove this unused import 'lombok.Setter'.(ó¸çµ8ˆï”ßð1J$aba7387a-7695-49f5-9547-dc43eec2dc6d

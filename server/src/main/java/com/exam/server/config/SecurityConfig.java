@@ -40,8 +40,8 @@ public class SecurityConfig {
         .authorizeHttpRequests(
             requests ->
                 requests
-                    .requestMatchers("/about.html", "/contact.html",
-                            "/graphql", "/dash.html", "/test.html",
+                    .requestMatchers("/about.html", "/contact.html", "/index.html",
+                            "/graphql", "/dash.html", "/test.html", "/graphiql",
                             "/photos/**", "/contact",
                             "/js/**", "/css/**")
                     .permitAll()

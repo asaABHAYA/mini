@@ -1,9 +1,13 @@
 type Query{
     getUserLoginInfo(userName: String): UserLoginInfo
+    getFeedBackInfo(location: String): [FeedBackInfo]
+    getLocationInfoByName(name: String): LocationInfo
 }
 
 type Mutation{
     addUser(userLoginInfo: UserLoginInfoIp): Boolean
+    addFeedback(feedBackInfo: FeedBackInfoInput): FeedBackInfo
+    addLocation(locationInfo: LocationInfoInput): LocationInfo
 }
 
 
@@ -21,4 +25,29 @@ type UserLoginInfo{
     email: String!
     phoneNo: Int!
     password: String!
+}
+
+type FeedBackInfo{
+    userName: String,
+    feedbackMessage: String,
+    location: String
+}
+input FeedBackInfoInput{
+    userName: String,
+    feedbackMessage: String,
+    location: String
+}
+
+type LocationInfo{
+    name: String!,
+    email: String!,
+    phone: Int!,
+    address: String!
+}
+
+input LocationInfoInput{
+    name: String!,
+    email: String!,
+    phone: Int!,
+    address: String!
 }

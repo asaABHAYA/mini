@@ -25,3 +25,17 @@ e
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 G
 server/build.gradle.kts,1\7\17fd1d60fc99c8b8340acb73dab09d68195497ae
+w
+Gserver/src/main/java/com/exam/server/controller/FeedBackController.java,c\9\c951c80424afd135d6a437650097edc66db9488c
+{
+Kserver/src/main/java/com/exam/server/controller/LocationInfoController.java,a\8\a89bec36d48bba1e25fe03223b051345eb8e871d
+q
+Aserver/src/main/java/com/exam/server/service/FeedBackService.java,b\3\b35892535b1076f2d7603f8e44791adb5995c145
+w
+Gserver/src/main/java/com/exam/server/repository/FeedBackRepository.java,0\d\0dc239449fdfe7334d69f8e0ff9ae6d5f2c9ff4d
+m
+=server/src/main/java/com/exam/server/entity/FeedBackInfo.java,f\1\f1c4177ae71dac77d51ff804de753e5486c4c62a
+{
+Kserver/src/main/java/com/exam/server/repository/LocationInfoRepository.java,e\2\e268dfe2ab9a84acc242ab39ea2afdb3a346b73a
+q
+Aserver/src/main/java/com/exam/server/service/LocationService.java,d\0\d06ebdbfae7ec0ec03eb2a4edd07fa6b74851659
