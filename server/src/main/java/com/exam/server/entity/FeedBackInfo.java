@@ -18,6 +18,8 @@ public class FeedBackInfo {
 
     private String feedbackMessage;
 
+    private String eventName;
+
     @Enumerated(EnumType.STRING)
     private Location location;
 

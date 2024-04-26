@@ -46,7 +46,7 @@ public class SecurityConfig {
                             "/dash.html", "/404.html", "/events.html",
                             "/error.html", "/e1.html", "/addevent.html",
                             "/addcat.html", "/eve1.html", "/starfeed.html",
-                            "/feed.html", "/eve2.html", "/eve3.html")
+                            "/feed.html", "/eve2.html", "/eve3.html", "/users.html")
                     .permitAll()
                     .requestMatchers("/admin.html")
                     .hasAnyAuthority("ADMIN")

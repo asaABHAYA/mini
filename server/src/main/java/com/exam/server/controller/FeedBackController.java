@@ -22,12 +22,15 @@ public class FeedBackController {
         return feedBackService.findAllByLocation(location);
     }
 
+    @QueryMapping
+    public List<FeedBackInfo> getAllFeedBackInfo() {
+        return feedBackService.getAllFeedBackInfo();
+    }
+
     @MutationMapping
     public FeedBackInfo addFeedback(@Argument FeedBackInfo feedBackInfo) {
         feedBackService.addFeedback(feedBackInfo);
         return feedBackInfo;
     }
-
-
 }
 

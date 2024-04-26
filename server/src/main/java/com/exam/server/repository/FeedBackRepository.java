@@ -12,6 +12,8 @@ public interface FeedBackRepository extends JpaRepository<FeedBackInfo, Integer>
 
     public List<FeedBackInfo> findAllByLocation(String location);
 
+    public List<FeedBackInfo> findAll();
+
     @NotNull
     @Override
     public FeedBackInfo save(@NotNull FeedBackInfo feedBackInfo);

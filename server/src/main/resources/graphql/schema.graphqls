@@ -1,11 +1,14 @@
 type Query{
     getUserLoginInfo(userName: String): UserLoginInfo
+    getAllUserLoginInfo: [UserLoginInfo]
     getFeedBackInfo(location: String): [FeedBackInfo]
     getLocationInfoByName(name: String): LocationInfo
+    getAllFeedBackInfo: [FeedBackInfo]
 }
 
 type Mutation{
     addUser(userLoginInfo: UserLoginInfoIp): Boolean
+    deleteUser(email: String): Boolean
     addFeedback(feedBackInfo: FeedBackInfoInput): FeedBackInfo
     addLocation(locationInfo: LocationInfoInput): LocationInfo
 }
@@ -38,13 +41,15 @@ enum Rating {
 type FeedBackInfo{
     userName: String,
     feedbackMessage: String,
-    location: Location
+    eventName: String,
+    location: Location,
     rating: Rating
 }
 input FeedBackInfoInput{
     userName: String,
     feedbackMessage: String,
-    location: Location
+    eventName: String,
+    location: Location,
     rating: Rating
 }
 

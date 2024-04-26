@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Management|TvM Evento</title>
+    <title>Document</title>
     <script src="https://kit.fontawesome.com/84f63f6754.js" crossorigin="anonymous"></script>
-    <script src="/js/feedback.js" crossorigin="anonymous"></script>
+    <script src="/js/authInterceptor.js" crossorigin="anonymous"></script>
+    <script src="/js/userInfo.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
     <body>
         <img src="/photos/slide6quality.jpg" alt="image" class="bgimage">
         <div class="bgblur"></div>
         <section class="Dashboard">
-            <a href="index.htm"><i class="fa-solid fa-arrow-right-from-bracket fa-flip-horizontal" id="go" style="color: #d5c9c9;"></i></a>
+            <a href="index.html"><i class="fa-solid fa-arrow-right-from-bracket fa-flip-horizontal" id="go" style="color: #d5c9c9;"></i></a>
             <img src="/photos/logo black.png" class="elogo">
             <div class="containdash">
                 <aside>
@@ -27,7 +28,7 @@
                             <h5>MANAGE EVENT</h5>
                             </a>
                         </li>
-                        <li><a href="/users.html">
+                        <li><a class="active">
                             <i class="fa-solid fa-user-pen"></i>
                             <h5>MANAGE USER</h5>
                             </a>
@@ -37,7 +38,7 @@
                             <h5>ADD CATEGORY</h5>
                             </a>
                         </li>
-                        <li><a href="" class="active">
+                        <li><a href="/feed.html">
                             <i class="fa-regular fa-comments"></i>
                             <h5>VIEW FEEDBACK</h5>
                             </a>
@@ -45,16 +46,15 @@
                     </ul>
                 </aside>
                 <main>
-                    <h2>VIEW FEEDBACK</h2>
-                    <div id="table-container">
+                    <h2>MANAGE USER</h2>
+                    <div id="user-data">
                         <table>
                         <thead>
                             <tr>
                                 <th>Username</th>
                                 <th>Email</th>
-                                <th>Rating</th>
-                                <th>Description</th>
-                                <th>Event Name</th>
+                                <th>Password</th>
+                                <th>Edit</th>
                                 <th>Delete</th>
                             </tr>
                         </thead>
@@ -62,61 +62,56 @@
                             <tr>
                                 <td>Abhiraj</td>
                                 <td>abhi456@gmail.com</td>
-                                <td><i class="fa-regular fa-star" style="color: #f40101;"></i><i class="fa-regular fa-star" style="color: #f40101;"></i><i class="fa-regular fa-star" style="color: #f40101;"></i></td>
-                                <td>Description</td>
-                                <td>Event name</td>
+                                <td>passwdd</td>
+                                <td><a href="edituser.html"class="dbtn sm">Edit</a></td>
                                 <td><a href=""class="dbtn sm danger">Delete</a></td>
                             </tr>
                             <tr>
                                 <td>Ramcharan</td>
                                 <td>ram456@gmail.com</td>
-                                <td><i class="fa-regular fa-star" style="color: #f40101;"><i class="fa-regular fa-star" style="color: #f40101;"></i><i class="fa-regular fa-star" style="color: #f40101;"></i></i><i class="fa-regular fa-star" style="color: #f40101;"></i><i class="fa-regular fa-star" style="color: #f40101;"></i></td>
-                                <td>Description</td>
-                                <td>Event name</td>
+                                <td>passwdd</td>
+                                <td><a href="edituser.html"class="dbtn sm">Edit</a></td>
                                 <td><a href=""class="dbtn sm danger">Delete</a></td>
                             </tr>
                             <tr>
                                 <td>Mickey</td>
                                 <td>mick456@gmail.com</td>
-                                <td><i class="fa-regular fa-star" style="color: #f40101;"></i><i class="fa-regular fa-star" style="color: #f40101;"></i></td>
-                                <td>Description</td>
-                                <td>Event name</td>
+                                <td>passwd1</td>
+                                <td><a href="edituser.html"class="dbtn sm">Edit</a></td>
                                 <td><a href=""class="dbtn sm danger">Delete</a></td>
                             </tr>
                             <tr>
                                 <td>Adamjohn</td>
                                 <td>adam456@gmail.com</td>
-                                <td><i class="fa-regular fa-star" style="color: #f40101;"></i><i class="fa-regular fa-star" style="color: #f40101;"></i><i class="fa-regular fa-star" style="color: #f40101;"></i><i class="fa-regular fa-star" style="color: #f40101;"></i></td>
-                                <td>Description</td>
-                                <td>Event name</td>
-                                <td><a href=""class="dbtn sm danger">Delete</a></td>
+                                <td>passwd2</td>
+                                <td><a href="edituser.html"class="dbtn sm">Edit</a></td>
+                                <td><a class="dbtn sm danger">Delete</a></td>
                             </tr>
                         </tbody>
                      </table>
-                    </div>
+                </div>
                 </main>
             </div>
         </section>
     <script>
-        var feedbacks = getAllFeedbacks()
+        var users = getAllUsers()
         var table = '<table>'
-        feedbacks.then((response) => {
+        users.then((response) => {
             response.json().then((data)=>{
-                console.log("Successfully getAllFeedbacks\n")
-                table += '<tr><th>Name</th><th>Event Name</th><th>Location</th><th>Message</th><th>rating</th></tr>';
-                data.data.getAllFeedBackInfo.forEach((item) =>{
-                    table += `<tr id=item.userName ><td>${item.userName}</td><td>${item.eventName}</td>
-                              <td>${item.location}</td><td>${item.feedbackMessage}</td>
-                              <td>${toStars(item.rating)}</td></tr>`;
+                console.log("Successfully getAllUserLoginInfo\n")
+                table += '<tr> <th>First name</th> <th>last name</th> <th>Email</th></tr>';
+                data.data.getAllUserLoginInfo.forEach((item) =>{
+                    table += `<tr id=${item.firstName} ><td>${item.firstName}</td><td>${item.lastName}</td>
+                              <td>${item.email}</td></tr>`;
                 });
                 table += '</table>';
-                const tableContainer = document.getElementById('table-container');
+                const tableContainer = document.getElementById('user-data');
                 tableContainer.innerHTML = table;
             }).catch((e) =>{
-                console.log("Failed to get feedback:" + e);
+                console.log("Failed to get UserLoginInfo:" + e);
             })
         }).catch((err) =>{
-            console.log("Failed to get feedback:" + err);
+            console.log("Failed to get UserLoginInfo:" + err);
         })
     </script>
     </body>

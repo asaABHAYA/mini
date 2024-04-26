@@ -1,5 +1,6 @@
 package com.exam.server.service;
 
+import com.exam.server.entity.Role;
 import com.exam.server.entity.UserLoginInfo;
 import com.exam.server.model.UserLoginGQL;
 import com.exam.server.repository.UserLoginRepository;
@@ -11,6 +12,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Log4j2
 @Service
@@ -53,5 +56,22 @@ public class UserLoginService implements UserDetailsService {
             throw new UsernameNotFoundException(username);
         }
         return user;
+    }
+
+    public List<UserLoginInfo> getAllUserLoginInfo() {
+        return userLoginRepository.findAllByRole(Role.USER);
+    }
+
+    public List<UserLoginInfo> getAllAdminLoginInfo() {
+        return userLoginRepository.findAllByRole(Role.ADMIN);
+    }
+
+    public boolean deleteUserLoginInfo(@NonNull String email) {
+        try{
+            userLoginRepository.deleteByEmail(email);
+            return true;
+        }catch (Exception e) {
+            return false;
+        }
     }
 }

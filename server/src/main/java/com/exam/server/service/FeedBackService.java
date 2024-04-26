@@ -19,5 +19,8 @@ public class FeedBackService {
     public List<FeedBackInfo> findAllByLocation(String location){
         return  feedBackRepository.findAllByLocation(location);
     }
+    public List<FeedBackInfo> getAllFeedBackInfo(){
+        return feedBackRepository.findAll();
+    }
 }
 
