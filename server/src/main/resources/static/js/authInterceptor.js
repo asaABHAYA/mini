@@ -80,16 +80,19 @@ function addUserMutation(firstName, lastName, email, phoneNo, password){
               if(data.data.addUser) {
                   console.log("Successfully added user");
                   setLoginToken(firstName, password);
-                  setTimeout(()=>redirect("/events.html"),  10)
+                  window.location.replace("/login.html");
+                  return true;
               }
               else {
                   console.log("Failed to save user");
+                  return false;
               }
           })
 
       }
       else{
           console.log("Failed to save user");
+          return false;
       }
     })
 }

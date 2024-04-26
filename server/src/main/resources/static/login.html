@@ -27,7 +27,6 @@
                     <input style="color: rgb(231, 190, 139)" id="register-first-name" type="text" class="input-field" placeholder="First Name" required>
                     <input style="color: rgb(231, 190, 139)" id="register-last-name" type="text" class="input-field" placeholder="Last Name" required>
                     <input style="color: rgb(231, 190, 139)" id="register-email" type="email" class="input-field" placeholder="Email Id" required>
-                    <input style="color: rgb(231, 190, 139)" id="register-phone" type="number" class="input-field" placeholder="Phone No" required>
                     <input style="color: rgb(231, 190, 139)" id="register-password" type="password" class="input-field" placeholder="Enter Password" required>
                     <button style="color: rgb(255, 255, 255)" type="submit" class="submit-btn">Register</button>
                 </form>
@@ -102,10 +101,11 @@
              var firstName = $("#register-first-name").val()
              var lastName = $("#register-last-name").val()
              var email = $("#register-email").val()
-             var phoneNo = $("#register-phone").val()
+             var phoneNo = 0
              var password = $("#register-password").val()
-             addUserMutation(firstName, lastName, email, phoneNo, password)
+             if(addUserMutation(firstName, lastName, email, phoneNo, password)){
              setTimeout(()=>{redirect("/events.html")}, 10)
+             }
          }
          $(document).ready(function() {
              $('form').on('submit', function(e){

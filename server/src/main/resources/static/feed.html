@@ -3,42 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Event Management|TvM Evento</title>
     <script src="https://kit.fontawesome.com/84f63f6754.js" crossorigin="anonymous"></script>
-    <script src="/js/authInterceptor.js" crossorigin="anonymous"></script>
-    <script src="/js/admin.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
     <img src="/photos/slide6quality.jpg" alt="image" class="bgimage">
     <div class="bgblur"></div>
     <section class="Dashboard">
-        <a href="index.html"><i class="fa-solid fa-arrow-right-from-bracket fa-flip-horizontal" id="go" style="color: #d5c9c9;"></i></a>
+        <a href="index.htm"><i class="fa-solid fa-arrow-right-from-bracket fa-flip-horizontal" id="go" style="color: #d5c9c9;"></i></a>
         <img src="/photos/logo black.png" class="elogo">
         <div class="containdash">
             <aside>
                 <ul>
-                    <li><a href="addevent.html">
+                    <li><a href="addevent.html"> 
                         <i class="fa-solid fa-plus"></i>
                         <h5>ADD EVENT</h5>
                         </a>
                     </li>
-                    <li><a href="dash.html">
+                    <li><a href="dash.html"> 
                         <i class="fa-solid fa-file-pen"></i>
                         <h5>MANAGE EVENT</h5>
                         </a>
                     </li>
-                    <li><a class="active">
+                    <li><a href="admin.html"> 
                         <i class="fa-solid fa-user-pen"></i>
                         <h5>MANAGE USER</h5>
                         </a>
                     </li>
-                    <li><a href="addcat.html">
+                    <li><a href="addcat.html"> 
                         <i class="fa-solid fa-layer-group"></i>
                         <h5>ADD CATEGORY</h5>
                         </a>
                     </li>
-                    <li><a href="/feed.html">
+                    <li><a href="" class="active"> 
                         <i class="fa-regular fa-comments"></i>
                         <h5>VIEW FEEDBACK</h5>
                         </a>
@@ -46,14 +44,15 @@
                 </ul>
             </aside>
             <main>
-                <h2>MANAGE USER</h2>
+                <h2>VIEW FEEDBACK</h2>
                 <table>
                 <thead>
                     <tr>
                         <th>Username</th>
                         <th>Email</th>
-                        <th>Password</th>
-                        <th>Edit</th>
+                        <th>Rating</th>
+                        <th>Description</th>
+                        <th>Event Name</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
@@ -61,29 +60,33 @@
                     <tr>
                         <td>Abhiraj</td>
                         <td>abhi456@gmail.com</td>
-                        <td>passwdd</td>
-                        <td><a href="edituser.html"class="dbtn sm">Edit</a></td>
+                        <td><i class="fa-regular fa-star" style="color: #f40101;"></i><i class="fa-regular fa-star" style="color: #f40101;"></i><i class="fa-regular fa-star" style="color: #f40101;"></i></td>
+                        <td>Description</td>
+                        <td>Event name</td>
                         <td><a href=""class="dbtn sm danger">Delete</a></td>
                     </tr>
                     <tr>
                         <td>Ramcharan</td>
                         <td>ram456@gmail.com</td>
-                        <td>passwdd</td>
-                        <td><a href="edituser.html"class="dbtn sm">Edit</a></td>
+                        <td><i class="fa-regular fa-star" style="color: #f40101;"><i class="fa-regular fa-star" style="color: #f40101;"></i><i class="fa-regular fa-star" style="color: #f40101;"></i></i><i class="fa-regular fa-star" style="color: #f40101;"></i><i class="fa-regular fa-star" style="color: #f40101;"></i></td>
+                        <td>Description</td>
+                        <td>Event name</td>
                         <td><a href=""class="dbtn sm danger">Delete</a></td>
                     </tr>
                     <tr>
                         <td>Mickey</td>
                         <td>mick456@gmail.com</td>
-                        <td>passwd1</td>
-                        <td><a href="edituser.html"class="dbtn sm">Edit</a></td>
+                        <td><i class="fa-regular fa-star" style="color: #f40101;"></i><i class="fa-regular fa-star" style="color: #f40101;"></i></td>
+                        <td>Description</td>
+                        <td>Event name</td>
                         <td><a href=""class="dbtn sm danger">Delete</a></td>
                     </tr>
                     <tr>
                         <td>Adamjohn</td>
                         <td>adam456@gmail.com</td>
-                        <td>passwd2</td>
-                        <td><a href="edituser.html"class="dbtn sm">Edit</a></td>
+                        <td><i class="fa-regular fa-star" style="color: #f40101;"></i><i class="fa-regular fa-star" style="color: #f40101;"></i><i class="fa-regular fa-star" style="color: #f40101;"></i><i class="fa-regular fa-star" style="color: #f40101;"></i></td>
+                        <td>Description</td>
+                        <td>Event name</td>
                         <td><a href=""class="dbtn sm danger">Delete</a></td>
                     </tr>
                 </tbody>
