@@ -6,6 +6,8 @@
         <script src="/js/authInterceptor.js" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/84f63f6754.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/htmx.org@1.9.12/dist/htmx.js" integrity="sha384-qbtR4rS9RrUMECUWDWM2+YGgN3U4V4ZncZ0BvUcg9FGct0jqXz3PUdVpU1p0yrXS" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
     </head>
     <body>
         <div class="hero">
@@ -16,20 +18,18 @@
                     <button style="color: rgb(204, 106, 8)" type="button" class="toggle-btn" onclick="swtichTologin()">Login</button>
                     <button style="color: rgb(204, 106, 8)" type="button" class="toggle-btn" onclick="swtichToregister()">Register</button>
                 </div>
-                <form id="login" class="input-group-login">
-                    <input style="color: rgb(231, 190, 139)" id="login-email" type="email" class="input-field" placeholder="Email Id"required>
+                <form id="login" class="input-group-login" onsubmit="login()">
+                    <input style="color: rgb(231, 190, 139)" id="login-email" type="text" class="input-field" placeholder="User Name" required>
                     <input style="color: rgb(231, 190, 139)" id="login-password" type="password" class="input-field" placeholder="Enter Password" required>
-                    <input type="checkbox" class="check-box"> <span>Remember Password</span>
-                    <button style="color: rgb(255, 255, 255)" type="submit" class="submit-btn" onclick="login()">Login</button>
+                    <button style="color: rgb(255, 255, 255)" type="submit" class="submit-btn">Login</button>
                 </form>
-                <form id="register" class="input-group-register">
+                <form id="register" class="input-group-register" onsubmit="registerUser()">
                     <input style="color: rgb(231, 190, 139)" id="register-first-name" type="text" class="input-field" placeholder="First Name" required>
                     <input style="color: rgb(231, 190, 139)" id="register-last-name" type="text" class="input-field" placeholder="Last Name" required>
                     <input style="color: rgb(231, 190, 139)" id="register-email" type="email" class="input-field" placeholder="Email Id" required>
                     <input style="color: rgb(231, 190, 139)" id="register-phone" type="number" class="input-field" placeholder="Phone No" required>
                     <input style="color: rgb(231, 190, 139)" id="register-password" type="password" class="input-field" placeholder="Enter Password" required>
-                    <input type="checkbox" class="check-box"> <span>I agree to the terms & conditions</span>
-                    <button style="color: rgb(255, 255, 255)" type="submit" class="submit-btn" onclick="registerUser()">Register</button>
+                    <button style="color: rgb(255, 255, 255)" type="submit" class="submit-btn">Register</button>
                 </form>
             </div> 
 
@@ -55,7 +55,7 @@
             var modal = document.getElementById("hero");
             window.onclick = function(event)
             {
-                if (event.target == modal)
+                if (event.target === modal)
                 {
                     modal.style.display = "none";
                  
@@ -65,64 +65,53 @@
         <script> 
          function login()
          {
-             console.log("Login" + $("#login-email").val() + ":" + $("#login-password").val())
+             const userName = $("#login-email").val()
+             const password = $("#login-password").val()
              $.ajax({
                  type: "GET",
-                 url: "/events.html",
+                 url: "/dash.html",
                  dataType: "html",
                  async: false,
                  headers: {
-                     "Authorization": "Basic " + btoa($("#login-email").val() + ":" + $("#login-password").val())
+                     "Authorization": "Basic " + btoa( userName + ":" + password)
                  },
                  success: function (response) {
-                     self.addEventListener("fetch", (event) => {
-                         var currentUrl = new URL(event.request.url);
-                         if (currentUrl.origin === location.origin){
-                             var newRequest = new Request(event.request, {
-                                 mode: "cors",
-                                 credentials: "same-origin",
-                                 headers: {
-                                     "Authorization": "Basic " + btoa($("#login-email").val() + ":" + $("#login-password").val()) + "="
-                                 }
-                             });
-                             event.respondWith(fetch(newRequest));
-                         }
-                         else {
-                             event.respondWith(fetch(event.request));
-                         }
-                     });
                      console.log(response.type)
-                     localStorage.setItem("authToken", "Basic " + btoa($("#login-email").val() + ":" + $("#login-password").val() + "="));
-                     processAjaxData(response, "events.html")
+                     setLoginToken(userName, password)
+                     $.ajax({
+                         type: "GET",
+                         url: "/admin.html",
+                         dataType: "html",
+                         async: false,
+                         headers: {
+                             "Authorization": "Basic " + btoa( userName + ":" + password)
+                         },
+                         success: function(response2){
+                            processAjaxData(response2, "admin.html")
+                         },
+                         error: function(textStatus, errorThrown){
+                             window.location.replace("/index.html")
+                         }
+                     })
+                 },error(textStatus, errorThrown){
+                     alert("Incorrect username or password")
                  }
              });
          }
          function registerUser() {
-             var mutation = `
-             mutation AddUser {
-                addUser(
-                    userLoginInfo: {
-                        firstName:"` + $("#register-first-name").val() + `",
-                        lastName:"` + $("#register-last-name").val() + `",
-                        email:"` + $("#register-email").val() + `",
-                        phoneNo:` + $("#register-phone").val() + `,
-                        password:"` + $("#register-password").val() + `"
-                     })
-             }`;
-
-             console.log(mutation)
-             fetch("/graphql", {
-                 method: "POST",
-                 headers: {
-                     "Content-Type": "application/json",
-                     "Accept": "application/json",
-                 },
-                 body: JSON.stringify({query: mutation})
-             }).then(result =>{
-                 loginRequest(btoa($("#register-first-name") + ":" + $("#register-password") + "="))
-             })
-
+             var firstName = $("#register-first-name").val()
+             var lastName = $("#register-last-name").val()
+             var email = $("#register-email").val()
+             var phoneNo = $("#register-phone").val()
+             var password = $("#register-password").val()
+             addUserMutation(firstName, lastName, email, phoneNo, password)
+             setTimeout(()=>{redirect("/events.html")}, 10)
          }
+         $(document).ready(function() {
+             $('form').on('submit', function(e){
+                 e.preventDefault();
+             });
+         })
         </script>
     </body>
 <html/>

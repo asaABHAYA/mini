@@ -40,14 +40,13 @@ public class SecurityConfig {
         .authorizeHttpRequests(
             requests ->
                 requests
-                    .requestMatchers("/about.html", "/contact.html", "/index.html",
-                            "/graphql", "/dash.html", "/test.html", "/graphiql",
-                            "/photos/**", "/contact",
-                            "/js/**", "/css/**")
+                    .requestMatchers("/graphiql", "/photos/**",  "/js/**", "/css/**",
+                            "/about.html", "/contact.html", "/index.html",
+                            "/graphql", "/dash.html", "/404.html", "/events.html",
+                            "error.html", "e1.html", "addevent.html",
+                            "addcat.html")
                     .permitAll()
-                    .requestMatchers("/user")
-                    .hasAnyAuthority("USER")
-                    .requestMatchers("/admin")
+                    .requestMatchers("/admin.html")
                     .hasAnyAuthority("ADMIN")
                     .anyRequest()
                     .authenticated())

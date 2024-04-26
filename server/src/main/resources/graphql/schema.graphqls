@@ -12,11 +12,11 @@ type Mutation{
 
 
 input UserLoginInfoIp{
-    firstName: String
-    lastName: String
-    email: String
-    phoneNo: Int
-    password: String
+    firstName: String!
+    lastName: String!
+    email: String!
+    phoneNo: Int!
+    password: String!
 }
 
 type UserLoginInfo{

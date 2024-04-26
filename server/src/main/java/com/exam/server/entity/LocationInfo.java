@@ -21,8 +21,7 @@ public class LocationInfo {
     public LocationInfo() {}
 
 
-    public LocationInfo(int id, String name, String email, Integer phone, String address) {
-        this.id = id;
+    public LocationInfo( String name, String email, Integer phone, String address) {
         this.name = name;
         this.email = email;
         this.phone = phone;
