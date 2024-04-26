@@ -1,5 +1,5 @@
 
 …
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8Î¨ùÆñ1J$8c5a161e-7640-44f5-a235-ed87bd167f55
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8Î¨ùÆñ1J$e842a4f3-4d61-4324-9036-20fe577e37a7
 ¥
-java:S3305"]Inject this field value directly into "authenticationProvider", the only method that uses it.(Ä‹¹«úÿÿÿÿ8Ï¨ùÆñ1J$a2a7a0e8-dae8-47f4-8690-0ca54d122b75
+java:S3305"]Inject this field value directly into "authenticationProvider", the only method that uses it.(Ä‹¹«úÿÿÿÿ8Ï¨ùÆñ1J$34c61534-8cfc-475f-bf98-4751a9d4d69c

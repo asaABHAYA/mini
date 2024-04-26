@@ -5,13 +5,15 @@
         <link rel="stylesheet" href="/css/ee.css">
         <script src="https://kit.fontawesome.com/84f63f6754.js" crossorigin="anonymous"></script>
         <link rel="website icon" type="png" href="/photos/newlogoevnto.png">
+        <script src="/js/feedback.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 </head>
 <body>
   <div class="container">
     <div class="post">
       <div class="text">Thanks for the review !!</div>
-      <div class="edit">EDIT</div>
+      <a href="/events.html">Go to events</a>
     </div>
     <div class="star-widget">
       <input type="radio" name="rate" id="rate-5">
@@ -24,30 +26,55 @@
       <label for="rate-2" class="fas fa-star"></label>
       <input type="radio" name="rate" id="rate-1">
       <label for="rate-1" class="fas fa-star"></label>
-      <form action="#">
+      <form>
         <header></header>
         <div class="textarea">
-          <textarea cols="30" placeholder="FeedBack"></textarea>
+          <textarea cols="30" placeholder="FeedBack" id="feedback-text"></textarea>
         </div>
-        <div class="btn">
-          <button type="submit">Submit</button>
+        <div class="btn" onclick="addFeedBack()">
+          <button type="submit" >Submit</button>
         </div>
       </form>
     </div>
   </div>
   <script>
+    $(document).ready(function() {
+      $('form').on('submit', function(e){
+        console.log("Submit event")
+        e.preventDefault();
+      })
+    })
     const btn = document.querySelector("button");
     const post = document.querySelector(".post");
     const widget = document.querySelector(".star-widget");
-    const editBtn = document.querySelector(".edit");
     btn.onclick = ()=>{
       widget.style.display = "none";
       post.style.display = "block";
-      editBtn.onclick = ()=>{
-        widget.style.display = "block";
-        post.style.display = "none";
-      }
       return false;
+    }
+    function addFeedBack() {
+      console.log("Adding feedback")
+      var rating;
+      var msg = $("#feedback-text").val()
+      if (msg === null || msg === ""){
+        alert("Enter feedback massage")
+        return
+      }
+      if ($('#rate-5').is(':checked')){
+        rating = "FIVE_STARS"
+      }
+      else if ($('#rate-4').is(':checked')){
+        rating = "FOUR_STARS"
+      }
+      else if ($('#rate-4').is(':checked')){
+        rating = "THREE_STARS"
+      }
+      else if ($('#rate-4').is(':checked')){
+        rating = "TWO_STARS"
+      }else {
+        rating = "ONE_STAR"
+      }
+      postFeedBack(msg, "Trivandrum", rating)
     }
   </script>
 </body>

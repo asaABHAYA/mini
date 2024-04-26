@@ -89,7 +89,12 @@
                             processAjaxData(response2, "admin.html")
                          },
                          error: function(textStatus, errorThrown){
-                             window.location.replace("/index.html")
+                             if (localStorage.getItem("prevPageUrl") !== null){
+                                 window.location.replace(localStorage.getItem("prevPageUrl"))
+                             }else {
+                                 console.log(localStorage.getItem("prevPageUrl"))
+                                 window.location.replace("/index.html")
+                             }
                          }
                      })
                  },error(textStatus, errorThrown){
@@ -104,7 +109,11 @@
              var phoneNo = 0
              var password = $("#register-password").val()
              if(addUserMutation(firstName, lastName, email, phoneNo, password)){
-             setTimeout(()=>{redirect("/events.html")}, 10)
+                 if (localStorage.getItem("prevPageUrl") !== null){
+                     window.location.replace(localStorage.getItem("prevPageUrl"))
+                 }else {
+                     window.location.replace("/index.html")
+                 }
              }
          }
          $(document).ready(function() {

@@ -39,3 +39,7 @@ m
 Kserver/src/main/java/com/exam/server/repository/LocationInfoRepository.java,e\2\e268dfe2ab9a84acc242ab39ea2afdb3a346b73a
 q
 Aserver/src/main/java/com/exam/server/service/LocationService.java,d\0\d06ebdbfae7ec0ec03eb2a4edd07fa6b74851659
+g
+7server/src/main/java/com/exam/server/entity/Rating.java,d\3\d35f6bae80964b6219ad5e2f9cf278fe92315a16
+i
+9server/src/main/java/com/exam/server/entity/Location.java,9\6\9612e105d01539138508f219ec633635e4c48fe3

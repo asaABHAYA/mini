@@ -27,15 +27,25 @@ type UserLoginInfo{
     password: String!
 }
 
+enum Rating {
+    FIVE_STARS,
+    FOUR_STARS
+    THREE_STARS,
+    TWO_STARS,
+    ONE_STAR
+}
+
 type FeedBackInfo{
     userName: String,
     feedbackMessage: String,
-    location: String
+    location: Location
+    rating: Rating
 }
 input FeedBackInfoInput{
     userName: String,
     feedbackMessage: String,
-    location: String
+    location: Location
+    rating: Rating
 }
 
 type LocationInfo{
@@ -50,4 +60,36 @@ input LocationInfoInput{
     email: String!,
     phone: Int!,
     address: String!
+}
+
+enum Location {
+    Trivandrum,
+    Kazhakootam,
+    Kovalam,
+    Varkala,
+    Attingal,
+    Thiruvallam,
+    Vizhinjam,
+    Nemom,
+    Vattiyoorkavu,
+    Palayam,
+    Poojappura,
+    Peroorkada,
+    Pattom,
+    Fort_Area,
+    Kaniyapuram,
+    Karamana,
+    Kilimanoor,
+    Manacaud,
+    Mannanthala,
+    Nedumangad,
+    Pappanamcode,
+    Sreekaryam,
+    Lulu_mall,
+    Thampanoor,
+    Thirumala,
+    Thiruvallom,
+    Ulloor,
+    Vellayani,
+    Vilappil
 }

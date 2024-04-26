@@ -16,16 +16,18 @@ public class LocationInfo {
     private String name;
     private String email;
     private Integer phone;
-    private String address;
+
+    @Enumerated(EnumType.STRING)
+    private Location location;
 
     public LocationInfo() {}
 
 
-    public LocationInfo( String name, String email, Integer phone, String address) {
+    public LocationInfo(String name, String email, Integer phone, Location location) {
         this.name = name;
         this.email = email;
         this.phone = phone;
-        this.address = address;
+        this.location = location;
     }
 }
 

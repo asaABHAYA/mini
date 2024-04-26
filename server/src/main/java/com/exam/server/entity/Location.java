@@ -1,0 +1,33 @@
+package com.exam.server.entity;
+
+public enum Location {
+    Trivandrum,
+    Kazhakootam,
+    Kovalam,
+    Varkala,
+    Attingal,
+    Thiruvallam,
+    Vizhinjam,
+    Nemom,
+    Vattiyoorkavu,
+    Palayam,
+    Poojappura,
+    Peroorkada,
+    Pattom,
+    Fort_Area,
+    Kaniyapuram,
+    Karamana,
+    Kilimanoor,
+    Manacaud,
+    Mannanthala,
+    Nedumangad,
+    Pappanamcode,
+    Sreekaryam,
+    Lulu_mall,
+    Thampanoor,
+    Thirumala,
+    Thiruvallom,
+    Ulloor,
+    Vellayani,
+    Vilappil
+}

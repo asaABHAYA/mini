@@ -17,12 +17,18 @@ public class FeedBackInfo {
     private String userName;
 
     private String feedbackMessage;
-    private String location;
+
+    @Enumerated(EnumType.STRING)
+    private Location location;
+
+    @Enumerated(EnumType.STRING)
+    private Rating rating;
 
 
-    public FeedBackInfo(String userName, String feedbackMessage, String location) {
+    public FeedBackInfo(String userName, String feedbackMessage, Location location, Rating rating) {
         this.userName = userName;
         this.feedbackMessage = feedbackMessage;
         this.location = location;
+        this.rating = rating;
     }
 }

@@ -9,6 +9,7 @@ function authInterceptor(request) {
 
 function setLoginToken(userName, password) {
     localStorage.setItem("authToken", btoa( userName + ":" + password));
+    localStorage.setItem("userName", userName);
 }
 
 function processAjaxData(response, urlPath){
