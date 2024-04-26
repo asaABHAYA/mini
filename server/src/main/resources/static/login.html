@@ -88,7 +88,7 @@
                          success: function(response2){
                             processAjaxData(response2, "admin.html")
                          },
-                         error: function(textStatus, errorThrown){
+                         error: function(){
                              if (localStorage.getItem("prevPageUrl") !== null){
                                  window.location.replace(localStorage.getItem("prevPageUrl"))
                              }else {
@@ -97,7 +97,7 @@
                              }
                          }
                      })
-                 },error(textStatus, errorThrown){
+                 },error(){
                      alert("Incorrect username or password")
                  }
              });

@@ -27,10 +27,10 @@ function loginRequest(auth){
 
 }
 
-function vaildateRegisterInfo(firstName, lastName, email, phoneNo){
+function vaildateRegisterInfo(firstName, lastName, email, password){
     let userReg = /^(?=.{1,50}$)[a-z]+(?:['_.\s][a-z]+)*$/i
     let mailReg = /^\S+@\S+\.\S+$/
-    let phoneReg = /^1[3456789]\d{9}$/;
+    let passReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&])[A-Za-z\d@.#$!^%*?&]{8,15}$/;
     if (!userReg.test(firstName)){
         alert("Invalid first name");
         return false;
@@ -43,16 +43,15 @@ function vaildateRegisterInfo(firstName, lastName, email, phoneNo){
         alert("Invalid email");
         return false;
     }
-    if(phoneReg.test(phoneNo)){
-        alert("Invalid phoneNo");
-        return false;
+    if(!passReg.test(password)){
+        return !confirm("This password is weak\nDo you want use a stronger password");
     }
     return true;
 }
 
 
-function addUserMutation(firstName, lastName, email, phoneNo, password){
-    if (!vaildateRegisterInfo(firstName, lastName, email, phoneNo)) {
+function addUserMutation(firstName, lastName, email, phoneNo, password) {
+    if (!vaildateRegisterInfo(firstName, lastName, email, password)) {
         console.log("Invalid register info");
         return null;
     }
