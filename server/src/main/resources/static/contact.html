@@ -4,6 +4,8 @@
         <title>contact</title>
         <link rel="stylesheet" href="/css/styles.css">
         <script src="https://kit.fontawesome.com/84f63f6754.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script src="/js/contact.js" crossorigin="anonymous"></script>
         <link rel="website icon" type="png" href="/photos/newlogoevnto.png">
 </head>
 <body>
@@ -56,20 +58,18 @@
         </div>
         <div class="contact-col">
           
-          <form action="">
-            <input type="text" placeholder="Enter your name" required>
-            <input type="email" placeholder="Enter email address" required>
-            <input type="text" placeholder="Enter your subject" required> 
-            <textarea rows="8" placeholder="Message" required></textarea>
+          <form onsubmit="postSiteFeedPostForm()">
+            <input type="text" id="form-name" placeholder="Enter your name" required>
+            <input type="email" id="form-email" placeholder="Enter email address" required>
+            <input type="text" id="form-subject" placeholder="Enter your subject" required>
+            <textarea rows="8" id="form-msg" placeholder="Message" required></textarea>
             <button type="submit" class="cont2-btn">Send Message</button>
           </form>
   
   
         </div>
       </div>
-  
-  
-        </section>
+    </section>
     <section class="footer"> 
       <h4>ABOUT US</h4>
       <p>Let us show you better...<br>Stay connected with the pulse of Trivandrum's vibrant cultural scene! 
@@ -95,5 +95,19 @@
         <p>&copy; 2024 TRIVANDRUM DIARIES. ALL RIGHTS RESERVED</p>
       </div>
     </section>
+    <script>
+      $(document).ready(function() {
+        $('form').on('submit', function(e){
+          e.preventDefault();
+        });
+      })
+      function postSiteFeedPostForm() {
+        var name = $("#form-name").val()
+        var email = $("#form-email").val()
+        var subject = $("#form-subject").val()
+        var msg = $("#form-msg").val()
+        postSiteFeedBack(name, email, subject, msg)
+      }
+    </script>
 </body>
 </html>

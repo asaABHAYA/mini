@@ -43,3 +43,15 @@ g
 7server/src/main/java/com/exam/server/entity/Rating.java,d\3\d35f6bae80964b6219ad5e2f9cf278fe92315a16
 i
 9server/src/main/java/com/exam/server/entity/Location.java,9\6\9612e105d01539138508f219ec633635e4c48fe3
+m
+=server/src/main/java/com/exam/server/entity/SiteFeedBack.java,a\2\a273faf42ce7a77d3d242996ece2e26978ccf32e
+{
+Kserver/src/main/java/com/exam/server/repository/SiteFeedBackRepository.java,0\d\0dcfa675c9195356caf10981f59d4878cfa7774f
+u
+Eserver/src/main/java/com/exam/server/service/SiteFeedBackService.java,2\c\2c7df60f6e9ec41205638ee15fead140a387d74a
+{
+Kserver/src/main/java/com/exam/server/controller/SiteFeedBackController.java,2\a\2ac766993a4e3fddc678286147175cb8731071bd
+I
+server/bin/main/.htaccess,a\3\a37bfa323a050c9782db3df6960f262529972a31
+P
+ server/bin/main/static/.htaccess,e\b\eb64a243c0b4ec16c31dc789bff5f0ffe19f249a

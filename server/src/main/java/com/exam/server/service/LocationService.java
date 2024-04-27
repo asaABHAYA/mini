@@ -4,8 +4,6 @@ import com.exam.server.entity.LocationInfo;
 import com.exam.server.repository.LocationInfoRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class LocationService {
 
