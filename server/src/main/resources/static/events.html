@@ -2,15 +2,13 @@
 <html lang="en">
 <head>
         <title>Event Management|TvM Evento</title>
-        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="styles.css">
         <script src="https://kit.fontawesome.com/84f63f6754.js" crossorigin="anonymous"></script>
         <link rel="website icon" type="png" href="/photos/newlogoevnto.png">
         <link href="https://fonts.googleapis.com/css2?family=Sedan:ital@0;1&display=swap" rel="stylesheet">
-        <script>
-            function reg(){
-                window.location.href= "about.html"
-            }
-        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" crossorigin="anonymous"></script>
+
+
 
 </head>
 <body>
@@ -22,128 +20,71 @@
         <h2 class="write">FILTER:</h2>
         <h4>SELECT LOCATION:</h4>
     <form id="cityForm" style="overflow-y: scroll; height: 300px;">
+      <div class="checkbox-container">
+        <input type="checkbox" id="kazhakootam"  onchange="checkCards()">
+        <label for="kazhakootam">Kazhakootam</label>
+    </div>
+    <div class="checkbox-container">
+        <input type="checkbox" id="kovalam" onchange="checkCards()">
+        <label for="kovalam">Kovalam</label>
+    </div>
         <div class="checkbox-container">
-            <input type="checkbox" id="trivandrum" name="trivandrum">
-            <label for="trivandrum">Trivandrum</label>
-        </div>
-        <div class="checkbox-container">
-            <input type="checkbox" id="kazhakootam" name="kazhakootam">
-            <label for="kazhakootam">Kazhakootam</label>
-        </div>
-        <div class="checkbox-container">
-            <input type="checkbox" id="kovalam" name="kovalam">
-            <label for="kovalam">Kovalam</label>
-        </div>
-        <div class="checkbox-container">
-            <input type="checkbox" id="varkala" name="varkala">
+            <input type="checkbox" id="varkala" onchange="checkCards()">
             <label for="varkala">Varkala</label>
         </div>
         <div class="checkbox-container">
-            <input type="checkbox" id="attingal" name="attingal">
-            <label for="attingal">Attingal</label>
-        </div>
-        <div class="checkbox-container">
-            <input type="checkbox" id="thiruvallam" name="thiruvallam">
-            <label for="thiruvallam">Thiruvallam</label>
-        </div>
-        <div class="checkbox-container">
-            <input type="checkbox" id="vizhinjam" name="vizhinjam">
+            <input type="checkbox" id="vizhinjam" onchange="checkCards()">
             <label for="vizhinjam">Vizhinjam</label>
         </div>
         <div class="checkbox-container">
-            <input type="checkbox" id="nemom" name="nemom">
-            <label for="nemom">Nemom</label>
-        </div>
-        <div class="checkbox-container">
-            <input type="checkbox" id="vattiyoorkavu" name="vattiyoorkavu">
-            <label for="vattiyoorkavu">Vattiyoorkavu</label>
-        </div>
-        <div class="checkbox-container">
-            <input type="checkbox" id="palayam" name="palayam">
+            <input type="checkbox" id="palayam" onchange="checkCards()">
             <label for="palayam">Palayam</label>
         </div>
         <div class="checkbox-container">
-            <input type="checkbox" id="poojappura" name="poojappura">
+            <input type="checkbox" id="poojappura" onchange="checkCards()">
             <label for="poojappura">Poojappura</label>
         </div>
-        
         <div class="checkbox-container">
-            <input type="checkbox" id="peroorkada" name="peroorkada">
-            <label for="peroorkada">Peroorkada</label>
-        </div>
-        <div class="checkbox-container">
-            <input type="checkbox" id="pattom" name="pattom">
-            <label for="pattom">Pattom</label>
-        </div>
-        <div class="checkbox-container">
-            <input type="checkbox" id="fortarea" name="fortarea">
+            <input type="checkbox" id="fortarea" onchange="checkCards()">
             <label for="fortarea">Fort Area</label>
         </div>
         <div class="checkbox-container">
-            <input type="checkbox" id="kaniyapuram" name="kaniyapuram">
+            <input type="checkbox" id="kaniyapuram" onchange="checkCards()">
             <label for="kaniyapuram">Kaniyapuram</label>
         </div>
         <div class="checkbox-container">
-            <input type="checkbox" id="karamana" name="karamana">
-            <label for="karamana">Karamana</label>
-        </div>
-        <div class="checkbox-container">
-            <input type="checkbox" id="kilimanoor" name="kilimanoor">
-            <label for="kilimanoor">Kilimanoor</label>
-        </div>
-        <div class="checkbox-container">
-            <input type="checkbox" id="manacaud" name="manacaud">
+            <input type="checkbox" id="manacaud" onchange="checkCards()">
             <label for="manacaud">Manacaud</label>
         </div>
         <div class="checkbox-container">
-            <input type="checkbox" id="mannanthala" name="mannanthala">
+            <input type="checkbox" id="mannanthala" onchange="checkCards()">
             <label for="mannanthala">Mannanthala</label>
         </div>
         <div class="checkbox-container">
-            <input type="checkbox" id="nedumangad" name="nedumangad">
+            <input type="checkbox" id="nedumangad" onchange="checkCards()">
             <label for="nedumangad">Nedumangad</label>
         </div>
         <div class="checkbox-container">
-            <input type="checkbox" id="pappanamcode" name="pappanamcode">
+            <input type="checkbox" id="pappanamcode" onchange="checkCards()">
             <label for="pappanamcode">Pappanamcode</label>
         </div>
         <div class="checkbox-container">
-            <input type="checkbox" id="sreekaryam" name="sreekaryam">
+            <input type="checkbox" id="sreekaryam" onchange="checkCards()">
             <label for="sreekaryam">Sreekaryam</label>
         </div>
         <div class="checkbox-container">
-            <input type="checkbox" id="lulumall" name="lulumall">
+            <input type="checkbox" id="lulumall" onchange="checkCards()">
             <label for="lulumall">Lulumall</label>
         </div>
         <div class="checkbox-container">
-            <input type="checkbox" id="thampanoor" name="thampanoor">
+            <input type="checkbox" id="thampanoor" onchange="checkCards()">
             <label for="thampanoor">Thampanoor</label>
-        </div>
-        <div class="checkbox-container">
-            <input type="checkbox" id="thirumala" name="thirumala">
-            <label for="thirumala">Thirumala</label>
-        </div>
-        <div class="checkbox-container">
-            <input type="checkbox" id="thiruvallom" name="thiruvallom">
-            <label for="thiruvallom">Thiruvallom</label>
-        </div>
-        <div class="checkbox-container">
-            <input type="checkbox" id="ulloor" name="ulloor">
-            <label for="ulloor">Ulloor</label>
-        </div>
-        <div class="checkbox-container">
-            <input type="checkbox" id="vellayani" name="vellayani">
-            <label for="vellayani">Vellayani</label>
-        </div>
-        <div class="checkbox-container">
-            <input type="checkbox" id="vilappil" name="vilappil">
-            <label for="vilappil">Vilappil</label>
         </div>
 
     </form>
         <div class="fnevents">
             <h4>EVENT CATEGORIES:</h4>
-            <select id="filterSelect">
+            <select id="filterSelect" onchange="filterCards()">
               <option value="all">All</option>
               <option value="art">CulturalEvents</option>
               <option value="show">Pro-shows</option>
@@ -153,134 +94,67 @@
               <option value="fun">Fun Events</option>
             </select>
             <h4>TIMINGS:</h4>
-            <select id="sortSelect">
-                <option value="all">All Timing</option> 
-              <option value="morning">Morning</option>
+            <select id="sortSelect" onchange="sortCards()">
+              <option value="all">All Timing</option> 
+              <option value="beforenoon">Beforenoon</option>
               <option value="afternoon">Afternoon</option>
-              <option value="evening">Evening</option>
-              <option value="night">Night</option>
             </select>
-            <button class="essrch" type="button">Submit</button>
         </div>
         <div class="aicon">
-          <a href="index.html"><i class="fa-solid fa-house" style="color: #f0f0f0;"></i></a>
+          <a href="test.htm"><i class="fa-solid fa-house" style="color: #f0f0f0;"></i></a>
           <a href="contact.html"><i class="fa-solid fa-square-phone" style="color: #f0f0f0;"></i></a>
         </div>
     </div>
     <div class="emain">
       <div class="egrp">
         <img src="/photos/newlogoevnto.png" class="elogo">
-        <h1 style="color: bisque;">UPCOMING <span style="color: #ac3a09;">EVENTS</span></h1>
-
+        <h1 style="color: bisque;">UPCOMING <span style="color: #ac3a09;">EVENTS</span></h1>  
       </div>
         <div class="card-area">
             <div class="wrapper">
               <div class="box-area">
-                <div class="box">
+                <div class="box" data-afternoon="Afternoon" data-art="CulturalEvents" data-category="Kazhakootam">
                   <img src="/photos/pop4.jpg">
                   <div class="overlay">
                     <h3>Dance LIVE</h3>
-                    <p> Cultural Performance by<br>NavyaNair
-                     
-                      Convergent Expression
+                    <p>
+                      Category: CulturalEvents<br>Location: Kazhakootam<br>Timing: Afternoon
                   </p>
-                  <a href="/eve1.html">Explore <i class="fa-solid fa-arrow-right" style="color: #fc8535;"></i></a>
+                  <a href="eve1.html">Explore <i class="fa-solid fa-arrow-right" style="color: #fc8535;"></i></a>
                   <div class="icons2">
-                    <a href="/eve1.html">
+                    <a href="eve1.html">
                       <i class="fa-solid fa-utensils" style="color: #fc8535;"></i>
                     </a>
-                    <a href="/eve1.html">
+                    <a href="eve1.html">
                       <i class="fa-solid fa-map-location-dot" style="color: #fc8535;"></i>
                     </a>
                    </div>
                   </div>
                 </div>
-                <div class="box">
+                <div class="box" data-beforenoon="Beforenoon" data-art="CulturalEvents" data-category="Kovalam">
                   <img src="/photos/pop3.jpg">
                   <div class="overlay">
                     <h3>Music Live</h3>
-                    <p> Warm live music performance
-                      
-                      Performance by SHAHABAZ AMAN.
+                    <p>
+                      Category: CulturalEvents<br>Location: Kovalam<br>Timing: Beforenoon
                   </p>
-                  <a href="/eve2.html">Explore <i class="fa-solid fa-arrow-right" style="color: #fc8535;"></i></a>
+                  <a href="">Explore <i class="fa-solid fa-arrow-right" style="color: #fc8535;"></i></a>
                   <div class="icons2">
-                    <a href="/eve2.html">
+                    <a href="">
                       <i class="fa-solid fa-utensils" style="color: #fc8535;"></i>
                     </a>
-                    <a href="/eve2.html">
+                    <a href="">
                       <i class="fa-solid fa-map-location-dot" style="color: #fc8535;"></i>
                     </a>
                    </div>
                   </div>
                 </div>
-                <div class="box">
+                <div class="box" data-afternoon="Afternoon" data-show="Pro-shows" data-category="Palayam">
                   <img src="/photos/pop1.jpg">
                   <div class="overlay">
                     <h3>HARFEST</h3>
-                    <p> Trivandrum Carnival
-                      Venu:Kanakakunnu
-                      Performance by Arya Dayal and team
-                   </p>
-                   <a href="/eve3.html">Explore <i class="fa-solid fa-arrow-right" style="color: #fc8535;"></i></a>
-                   <div class="icons2">
-                    <a href="/eve3.html">
-                      <i class="fa-solid fa-utensils" style="color: #fc8535;"></i>
-                    </a>
-                    <a href="/eve3.html">
-                      <i class="fa-solid fa-map-location-dot" style="color: #fc8535;"></i>
-                    </a>
-                   </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card-area">
-            <div class="wrapper">
-              <div class="box-area">
-                <div class="box">
-                  <img src="/photos/popmoom.jpg">
-                  <div class="overlay">
-                    <h3>Science fest</h3>
                     <p> 
-                      Thonnakal global Science Fest
-                  </p>
-                  <a href="">Explore <i class="fa-solid fa-arrow-right" style="color: #fc8535;"></i></a>
-                  <div class="icons2">
-                    <a href="">
-                      <i class="fa-solid fa-utensils" style="color: #fc8535;"></i>
-                    </a>
-                    <a href="">
-                      <i class="fa-solid fa-map-location-dot" style="color: #fc8535;"></i>
-                    </a>
-                   </div>
-                  </div>
-                </div>
-                <div class="box">
-                  <img src="/photos/pop5.jpg">
-                  <div class="overlay">
-                    <h3>Exhibitions</h3>
-                    <p> HASTHAKALA
-                      Art &craft Exhibition
-                  </p>
-                  <a href="">Explore <i class="fa-solid fa-arrow-right" style="color: #fc8535;"></i></a>
-                  <div class="icons2">
-                    <a href="">
-                      <i class="fa-solid fa-utensils" style="color: #fc8535;"></i>
-                    </a>
-                    <a href="">
-                      <i class="fa-solid fa-map-location-dot" style="color: #fc8535;"></i>
-                    </a>
-                   </div>
-                  </div>
-                </div>
-                <div class="box">
-                  <img src="/photos/pic3.jpg">
-                  <div class="overlay">
-                    <h3>DJ Partyy</h3>
-                    <p> 10DJ
-                     Fire show |Organic colors|Rain dance DJ
+                      Category: Pro-shows <br>Location: Palayam<br>Timing: Afternoon
                    </p>
                    <a href="">Explore <i class="fa-solid fa-arrow-right" style="color: #fc8535;"></i></a>
                    <div class="icons2">
@@ -299,12 +173,72 @@
           <div class="card-area">
             <div class="wrapper">
               <div class="box-area">
-                <div class="box">
+                <div class="box" data-beforenoon="Beforenoon" data-exhibitions="Exhibitions" data-category="Kazhakootam">
+                  <img src="/photos/popmoom.jpg">
+                  <div class="overlay">
+                    <h3>Science fest</h3>
+                    <p> 
+                      Category: Exhibitions <br>Location: Kazhakootam<br>Timing: Beforenoon
+                  </p>
+                  <a href="">Explore <i class="fa-solid fa-arrow-right" style="color: #fc8535;"></i></a>
+                  <div class="icons2">
+                    <a href="">
+                      <i class="fa-solid fa-utensils" style="color: #fc8535;"></i>
+                    </a>
+                    <a href="">
+                      <i class="fa-solid fa-map-location-dot" style="color: #fc8535;"></i>
+                    </a>
+                   </div>
+                  </div>
+                </div>
+                <div class="box"  data-beforenoon="Beforenoon" data-exhibitions="Exhibitions" data-category="Kovalam">
+                  <img src="/photos/pop5.jpg">
+                  <div class="overlay">
+                    <h3>Exhibitions</h3>
+                    <p> HASTHAKALA<br>
+                      Category: Exhibitions <br>Location: Kovalam<br>Timing: Beforenoon
+                  </p>
+                  <a href="">Explore <i class="fa-solid fa-arrow-right" style="color: #fc8535;"></i></a>
+                  <div class="icons2">
+                    <a href="">
+                      <i class="fa-solid fa-utensils" style="color: #fc8535;"></i>
+                    </a>
+                    <a href="">
+                      <i class="fa-solid fa-map-location-dot" style="color: #fc8535;"></i>
+                    </a>
+                   </div>
+                  </div>
+                </div>
+                <div class="box"  data-afternoon="Afternoon" data-parties="DJ Parties" data-category="Lulumall">
+                  <img src="/photos/pic3.jpg">
+                  <div class="overlay">
+                    <h3>DJ Partyy</h3>
+                    <p> 10DJ|Fire show |Organic colors|Rain dance DJ<br>
+                     Category: DJ Parties <br>Location: Lulumall<br>Timing: Afternoon
+                   </p>
+                   <a href="">Explore <i class="fa-solid fa-arrow-right" style="color: #fc8535;"></i></a>
+                   <div class="icons2">
+                    <a href="">
+                      <i class="fa-solid fa-utensils" style="color: #fc8535;"></i>
+                    </a>
+                    <a href="">
+                      <i class="fa-solid fa-map-location-dot" style="color: #fc8535;"></i>
+                    </a>
+                   </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-area">
+            <div class="wrapper">
+              <div class="box-area">
+                <div class="box"  data-beforenoon="Beforenoon" data-food="Food Fest" data-category="Lulumall">
                   <img src="/photos/slide2.jpg">
                   <div class="overlay">
                     <h3>Food Fest</h3>
-                    <p> Grand Dining @ObyTamara
-
+                    <p> Grand Dining @ObyTamara<br>
+                      Category: Food Fest <br>Location: Lulumall<br>Timing: Beforenoon
                   </p>
                   <a href="">Explore <i class="fa-solid fa-arrow-right" style="color: #fc8535;"></i></a>
                   <div class="icons2">
@@ -317,11 +251,12 @@
                    </div>
                   </div>
                 </div>
-                <div class="box">
+                <div class="box"  data-afternoon="Afternoon" data-fun="Fun Events" data-category="Vizhinjam">
                   <img src="/photos/slide9.jpg">
                   <div class="overlay">
                     <h3>Light Shows</h3>
-                    <p>Illuminations in youe eyes...Mesmerizing in the joy of lights
+                    <p>Illuminations in youe eyes...Mesmerizing in the joy of lights<br>
+                      Category: Fun Events <br>Location: Vizhinjam<br>Timing: Afternoon
                   </p>
                   <a href="">Explore <i class="fa-solid fa-arrow-right" style="color: #fc8535;"></i></a>
                   <div class="icons2">
@@ -334,11 +269,12 @@
                    </div>
                   </div>
                 </div>
-                <div class="box">
+                <div class="box"  data-beforenoon="Beforenoon" data-art="CulturalEvents" data-category="Kovalam">
                   <img src="/photos/slide8.jpg">
                   <div class="overlay">
                     <h3>Kathakali</h3>
-                    <p>Traditional form of classical Indian dance
+                    <p>Traditional form of classical Indian dance<br>
+                      Category: CulturalEvents <br>Location: Kovalam<br>Timing: Beforenoon
                    </p>
                    <a href="">Explore <i class="fa-solid fa-arrow-right" style="color: #fc8535;"></i></a>
                    <div class="icons2">
@@ -355,6 +291,131 @@
             </div>
           </div>
     </div>
+    <script>
+      function sortCards() {
+        const sortBy = document.getElementById('sortSelect').value;
+        const boxArea = document.querySelector('.box-area');
+        const cards = Array.from(document.getElementsByClassName('box'));
+        
+        cards.forEach(box => {
+          const beforenoon = box.getAttribute('data-beforenoon');
+          const afternoon = box.getAttribute('data-afternoon');
+          
+          if (sortBy === 'beforenoon' && beforenoon === 'Beforenoon') {
+            box.style.display = 'block';
+          } else if (sortBy === 'afternoon' && afternoon === 'Afternoon') {
+            box.style.display = 'block';
+          } else if (sortBy === 'all') {
+            box.style.display = 'block';
+          } else {
+            box.style.display = 'none';
+          }
+        });
+      }
+      function filterCards() {
+        const sortBy = document.getElementById('filterSelect').value;
+        const boxArea = document.querySelector('.box-area');
+        const cards = Array.from(document.getElementsByClassName('box'));
+        
+        cards.forEach(box => {
+          const art = box.getAttribute('data-art');
+          const show = box.getAttribute('data-show');
+          const exhibitions = box.getAttribute('data-exhibitions');
+          const food = box.getAttribute('data-food');
+          const parties = box.getAttribute('data-parties');
+          const fun = box.getAttribute('data-fun');
+          
+          if (sortBy === 'art' && art === 'CulturalEvents') {
+            box.style.display = 'block';
+          } else if (sortBy === 'show' && show === 'Pro-shows') {
+            box.style.display = 'block';
+          }  else if (sortBy === 'exhibitions' && exhibitions === 'Exhibitions') {
+            box.style.display = 'block';
+          } else if (sortBy === 'food' && food === 'Food Fest') {
+            box.style.display = 'block';
+          } else if (sortBy === 'parties' && parties === 'DJ Parties') {
+            box.style.display = 'block';
+          }else if (sortBy === 'fun' && fun === 'Fun Events') {
+            box.style.display = 'block';
+          }else if (sortBy === 'all') {
+            box.style.display = 'block';
+          } else {
+            box.style.display = 'none';
+          }
+        });
+      }
+      
+    function checkCards() {
+  const kazhakootamChecked = document.getElementById('kazhakootam').checked;
+  const kovalamChecked = document.getElementById('kovalam').checked;
+  const boxArea = document.querySelector('.box-area');
+  const cards = Array.from(document.getElementsByClassName('box'));
+  
+  
+    var location;
+    if ($('#kazhakootam').is(':checked')){
+        location ='Kazhakootam'
+      }
+      else if ($('#kovalam').is(':checked')){
+        location ='Kovalam'
+      }
+      else if ($('#varkala').is(':checked')){
+        location ='Varkala'
+      }
+      else if ($('vizhijam').is(':checked')){
+        location ='Vizhijam'
+      }
+      else if ($('palayam').is(':checked')){
+        location =Palayam
+      }
+      else if ($('poojappura').is(':checked')){
+        location =Poojappura
+      }
+      else if ($('fortarea').is(':checked')){
+        location =Fortarea
+      }
+      else if ($('kaniyapuram').is(':checked')){
+        location =Kaniyapuram
+      }
+      else if ($('manacaud').is(':checked')){
+        location =Manacaud
+      }
+      else if ($('mannanthala').is(':checked')){
+        location =Mannanthala
+      }
+      else if ($('nedumangad').is(':checked')){
+        location =Nedumangad
+      }
+      else if ($('pappanamcode').is(':checked')){
+        location =Pappanamcode
+      }
+      else if ($('sreekaryam').is(':checked')){
+        location =Sreekaryam
+      }
+      else if ($('lulumall').is(':checked')){
+        location =Lulumall
+      }
+      else if ($('thampanoor').is(':checked')){
+        location =Thampanoor
+      }
+      else {
+        location =null
+      }
+  
+  cards.forEach(box => {
+    console.log(location)
+    const category = box.getAttribute('data-category');
+    const checkboxLocation = category.includes(location);
+    if(location===null){
+      box.style.display ='block';
+    }
+    if (!checkboxLocation && location!==null) {
+      box.style.display = 'none';
+    }
 
+  });
+}
+
+      </script>
 </body>
 </html>
